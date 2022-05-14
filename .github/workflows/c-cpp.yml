@@ -17,3 +17,5 @@ jobs:
       run: |
           make check TARGET=testMultiply
           make check TARGET=testInverse
+          make check TARGET=testAffine
+          make check TARGET=test1
