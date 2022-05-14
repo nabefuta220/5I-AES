@@ -33,4 +33,4 @@ out/testInverse : bin/testInverse.o src/Inverse.c src/Multiply.c
 out/testAffine : bin/testAffine.o  src/Affine.c
 out/test1 : src/Multiply.c src/Inverse.c src/Affine.c bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
-bin/addroundkey.o bin/cipher.o
+bin/addroundkey.o 
