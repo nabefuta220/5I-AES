@@ -30,3 +30,4 @@ clean:
 
 out/testMultiply : bin/testMultiply.o src/Multiply.c
 out/testInverse : bin/testInverse.o src/Inverse.c src/Multiply.c
+out/testAffine : bin/testAffine.o  src/Affine.c
