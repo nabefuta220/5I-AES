@@ -29,3 +29,4 @@ clean:
 	-rm -f $(TARGET) *.d　out/*
 
 out/testMultiply : bin/testMultiply.o src/Multiply.c
+out/testInverse : bin/testInverse.o src/Inverse.c src/Multiply.c
