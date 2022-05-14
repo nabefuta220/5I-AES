@@ -1,13 +1,24 @@
 #include "aes128.h"
-// ジャンさんがやった5つに分ける方法でもやってみたい
 
+/**
+ * @brief bits分、左にローテートする
+ *
+ * @param a
+ * @param bits
+ * @return aをbits分、左にローテートした結果
+ */
+unsigned char rotate(unsigned char a, int bits);
 unsigned char Affine(unsigned char b) {
-	unsigned char res  = 0;
-	unsigned char mask = 0b10001111;
-	for (int i = 0; i < 8;i++){
-		res ^= (b & mask);
-		mask = mask >> 1 | ((mask&(1<<0))<<7 );
-	}
-	res ^= 0b11000110;
+	unsigned char res = b;
+	res ^= rotate(b, 4);
+	res ^= rotate(b, 5);
+	res ^= rotate(b, 6);
+	res ^= rotate(b, 7);
+	res ^= 0b01100011;
 	return res;
+}
+
+unsigned char rotate(unsigned char a, int bits) {
+	bits %= 8;
+	return (a >> bits) ^ (a << (8 - bits));
 }
