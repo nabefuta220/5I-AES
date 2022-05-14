@@ -1,12 +1,12 @@
 #include "aes128.h"
 
 /**
- * @brief bits分、左にローテートする
+ * @brief bits分、右にローテートする
  *
  * @param a
- * @param bits
- * @return aをbits分、左にローテートした結果
- */
+ * @param bits ローテートする回数
+ * @return aをbits分、右にローテートした結果
+**/
 unsigned char rotate(unsigned char a, int bits);
 unsigned char Affine(unsigned char b) {
 	unsigned char res = b;
