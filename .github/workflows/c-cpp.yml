@@ -19,3 +19,5 @@ jobs:
           make check TARGET=testInverse
           make check TARGET=testAffine
           make check TARGET=test1
+          make check TARGET=testSubbytes 
+          make check TARGET=testMixcolumns
