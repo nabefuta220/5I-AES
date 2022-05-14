@@ -1,3 +1,5 @@
-results/out.*.txt
+results/*.txt
 */*.out
 *.out
+out/*
+!out/danny

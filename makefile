@@ -1,9 +1,9 @@
 CC  = gcc
 CFLAGS    =
-TARGET  = Sample
+TARGET  = 
 SRCS    = src/$(TARGET).c
 
-OBJS    = $(wildcard bin/*.o)
+OBJS    = #$(SRCS:.cpp=.o)
 
 INCDIR  = -I src
 
@@ -11,19 +11,26 @@ LIBDIR  =
 
 LIBS    = 
 
-$(TARGET): $(OBJS)
+out/$(TARGET): $(OBJS)
 	$(CC) -o $@ $^ $(LIBDIR) $(LIBS)
 	
 $(OBJS): $(SRCS)
 	$(CC) $(CFLAGS) $(INCDIR) -c $(SRCS)
 
-results/out.$(TARGET).txt : $(TARGET)
-	./$(TARGET).out >> $@
 
-cheak : results/out.$(TARGET).txt
+results/$(TARGET).txt : out/$(TARGET)
+	./$< > $@
+
+check : results/$(TARGET).txt
 	diff $< results/$(TARGET).res.txt
 all: clean $(OBJS) $(TARGET)
 
 clean:
-	-rm -f $(TARGET) *.d
+	-rm -f $(TARGET) *.d　out/*
 
+out/testMultiply : bin/testMultiply.o src/Multiply.c
+out/testInverse : bin/testInverse.o src/Inverse.c src/Multiply.c
+out/testAffine : bin/testAffine.o  src/Affine.c
+out/test1 : src/Multiply.c src/Inverse.c src/Affine.c bin/test1.o bin/cipherH.o \
+bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
+bin/addroundkey.o 
