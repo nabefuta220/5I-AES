@@ -44,7 +44,6 @@ bin/Inverse.o: src/Inverse.c src/aes128.h
 bin/keyexpand.o: src/keyexpand.c src/aes128.h
 keyexpand.o: src/keyexpand.c src/aes128.h
 
-
 src/sbox.c : out/mksbox
 	./$< > $@
 src/mbox02.c : out/mkmbox02
@@ -53,10 +52,13 @@ src/mbox03.c : out/mkmbox03
 	./$< > $@
 
 
-out/mksbox :src/mksbox.c src/Mutiply.c src/Inverse.c src/Affine.c
-out/mkmbox02 :src/mkmbox02.c src/Multiply.c
-out/mkmbox03:src/mkmbox03.c src/Multiply.c
-out/testSubbytes :src/Subbytes.c src/Multiply.c src/sbox.c bin/test1.o bin/cipherH.o \
+out/mksbox :bin/mksbox.o bin/Multiply.o bin/Inverse.o bin/Affine.o
+out/mkmbox02 :mkmbox02.o bin/Multiply.o
+out/mkmbox03:mkmbox03.o bin/Multiply.o
+out/testSubbytes :bin/Subbytes.o bin/Multiply.o src/sbox.c bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/mixcolumns.o
-out/testMixcolumns src/Mixcolumns.c src/Subbytes.c bin/test1.o bin/cipherH.o \
+out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand2.o bin/shiftrows.o
+bin/mksbox.o: src/mksbox.c
+mkmbox02.o: src/mkmbox02.c
+mkmbox03.o: src/mkmbox03.c
