@@ -8,5 +8,5 @@ int main() {
 		printf("0x%02x", Multiply(a, 0x02));
 		if (a != 0xff) printf(",");
 	}
-	printf("}\n");
+	printf("};\n");
 }

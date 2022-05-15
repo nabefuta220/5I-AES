@@ -15,6 +15,6 @@ int main() {
 		printf("0x%02x", prep_subByte((unsigned char)a));
 		if (a != 0xff) printf(",");
 	}
-	printf("}\n");
+	printf("};\n");
 }
 unsigned char prep_subByte(unsigned char b) { return Affine(Inverse(b)); }
