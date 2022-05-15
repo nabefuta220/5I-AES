@@ -13,7 +13,7 @@ LIBS    =
 
 
 
-out/%: 
+out/%: bin/%.o
 	$(CC) -o $@ $^ $(LIBDIR) $(LIBS)
 	
 bin/%.o: src/%.c
@@ -34,7 +34,7 @@ add :
 	$(CC) -MM src/$(TARGET).c >> makefile
 
 out/testMultiply : bin/testMultiply.o bin/Multiply.o
-out/testInverse : bin/testInverse.o bin/Inverse.o
+out/testInverse : bin/testInverse.o bin/Inverse.o bin/Multiply.o
 out/testAffine : bin/testAffine.o  bin/Affine.o
 out/test1 : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
