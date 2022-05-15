@@ -59,10 +59,11 @@ out/mkmbox02 :bin/mkmbox02.o bin/Multiply.o
 out/mkmbox03 :bin/mkmbox03.o bin/Multiply.o
 out/testSubbytes :bin/Subbytes.o bin/Multiply.o bin/cipherH.o \
 bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/mixcolumns.o bin/addroundkey.o 
-out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/test1.o bin/cipherH.o \
-bin/debug.o bin/keyexpand2.o bin/shiftrows.o
+out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/testMixcolumns.o bin/cipherH.o \
+bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/addroundkey.o 
 
 bin/mksbox.o: src/mksbox.c
 bin/mkmbox02.o: src/mkmbox02.c
 bin/mkmbox03.o: src/mkmbox03.c
 bin/Subbytes.o: src/Subbytes.c src/aes128.h src/sbox.c
+bin/Mixcolumns.o: src/Mixcolumns.c src/aes128.h src/mbox02.c src/mbox03.c
