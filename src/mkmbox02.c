@@ -1,13 +1,7 @@
 #include <stdio.h>
 
 #include "aes128.h"
-/**
- * @brief SubByteを前計算する
- *
- * @param b
- * @return Affine(inv(b))の結果
- */
-unsigned char prep_subB(unsigned char b);
+
 
 int main() {
 	printf("unsigned char mbox02[256]={");
