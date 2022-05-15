@@ -57,11 +57,12 @@ src/mbox03.c : out/mkmbox03
 out/mksbox :bin/mksbox.o bin/Multiply.o bin/Inverse.o bin/Affine.o
 out/mkmbox02 :bin/mkmbox02.o bin/Multiply.o
 out/mkmbox03 :bin/mkmbox03.o bin/Multiply.o
-out/testSubbytes :bin/Subbytes.o bin/Multiply.o src/sbox.c bin/test1.o bin/cipherH.o \
-bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/mixcolumns.o
+out/testSubbytes :bin/Subbytes.o bin/Multiply.o bin/cipherH.o \
+bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/mixcolumns.o bin/addroundkey.o 
 out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand2.o bin/shiftrows.o
 
 bin/mksbox.o: src/mksbox.c
 bin/mkmbox02.o: src/mkmbox02.c
 bin/mkmbox03.o: src/mkmbox03.c
+bin/Subbytes.o: src/Subbytes.c src/aes128.h src/sbox.c
