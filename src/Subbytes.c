@@ -1,7 +1,7 @@
 /**
  * @file Subbytes.c
  * @author Watanabe Satoshi
- * @brief subbytesの前計算を用いて高速化したプログラム
+ * @brief subbytesを前計算を用いて高速化したプログラム
  * @date 2022-05-15
  *
  * @copyright Copyright (c) 2022
