@@ -3,7 +3,6 @@ KEY:             000102030405060708090a0b0c0d0e0f
 CIPHER (ENCRIPT):
 round[ 0].input  00112233445566778899aabbccddeeff
 round[ 0].k_sch  000102030405060708090a0b0c0d0e0f
-
 round[ 1].start  00102030405060708090a0b0c0d0e0f0
 round[ 1].s_box  63cab7040953d051cd60e0e7ba70e18c
 round[ 1].s_row  6353e08c0960e104cd70b751bacad0e7
