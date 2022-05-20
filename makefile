@@ -92,3 +92,9 @@ out/testShiftrows : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/ci
 bin/debug.o bin/keyexpand1.o bin/Shiftrows.o bin/mixcolumns.o bin/subbytes.o \
 bin/addroundkey.o 
 bin/Shiftrows.o: src/Shiftrows.c src/aes128.h
+
+out/testmixcolumns : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
+bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/Mmixcolumns.o bin/subbytes.o \
+bin/addroundkey.o 
+
+bin/Mmixcolumns.o: src/Mmixcolumns.c src/aes128.h
