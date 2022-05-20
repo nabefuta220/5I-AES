@@ -98,3 +98,8 @@ bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/Mmixcolumns.o bin/subbytes.o \
 bin/addroundkey.o 
 
 bin/Mmixcolumns.o: src/Mmixcolumns.c src/aes128.h
+
+out/Test1 : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/Cipher.o \
+bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
+bin/addroundkey.o 
+bin/Cipher.o: src/Cipher.c src/aes128.h

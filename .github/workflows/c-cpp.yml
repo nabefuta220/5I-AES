@@ -25,3 +25,4 @@ jobs:
           make check TARGET=testsubbytes
           make check TARGET=testShiftrows
           make check TARGET=testmixcolumns
+          make check TARGET=Test1
