@@ -22,3 +22,4 @@ jobs:
           make check TARGET=testSubbytes 
           make check TARGET=testMixcolumns
           make check TARGET=testRoundkey
+          make check TARGET=testsubbytes

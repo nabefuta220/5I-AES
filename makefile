@@ -82,3 +82,8 @@ out/testRoundkey : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cip
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
 bin/Addroundkey.o 
 bin/Addroundkey.o: src/Addroundkey.c src/aes128.h
+
+out/testsubbytes : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
+bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/Msubbytes.o \
+bin/addroundkey.o 
+bin/Msubbytes.o: src/Msubbytes.c src/aes128.h
