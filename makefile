@@ -87,3 +87,8 @@ out/testsubbytes : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cip
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/Msubbytes.o \
 bin/addroundkey.o 
 bin/Msubbytes.o: src/Msubbytes.c src/aes128.h
+
+out/testShiftrows : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
+bin/debug.o bin/keyexpand1.o bin/Shiftrows.o bin/mixcolumns.o bin/subbytes.o \
+bin/addroundkey.o 
+bin/Shiftrows.o: src/Shiftrows.c src/aes128.h
