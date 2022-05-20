@@ -77,3 +77,8 @@ out/test2sM : bin/subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/A
 bin/keyexpand1.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
 out/test2Sm : bin/Subbytes.o bin/mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
 bin/keyexpand2.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
+
+out/testRoundkey : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
+bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
+bin/Addroundkey.o 
+bin/Addroundkey.o: src/Addroundkey.c src/aes128.h
