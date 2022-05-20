@@ -58,25 +58,25 @@ src/mbox03.c : out/mkmbox03
 out/mksbox :bin/mksbox.o bin/Multiply.o bin/Inverse.o bin/Affine.o
 out/mkmbox02 :bin/mkmbox02.o bin/Multiply.o
 out/mkmbox03 :bin/mkmbox03.o bin/Multiply.o
-out/testSubbytes :bin/Subbytes.o bin/Multiply.o bin/cipherH.o bin/test1.o \
-bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/mixcolumns.o bin/addroundkey.o 
-out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/test1.o bin/cipherH.o \
-bin/debug.o bin/keyexpand2.o bin/shiftrows.o bin/addroundkey.o 
+out/testSubbytes :bin/Subbytes.o bin/Multiply.o bin/Cipher.o bin/test1.o \
+bin/debug.o bin/keyexpand2.o bin/Shiftrows.o bin/Mmixcolumns.o bin/Addroundkey.o 
+out/testMixcolumns : bin/Mixcolumns.o bin/Subbytes.o bin/test1.o bin/Cipher.o \
+bin/debug.o bin/keyexpand2.o bin/Shiftrows.o bin/Addroundkey.o 
 
 bin/mksbox.o: src/mksbox.c
 bin/mkmbox02.o: src/mkmbox02.c
 bin/mkmbox03.o: src/mkmbox03.c
 bin/Subbytes.o: src/Subbytes.c src/aes128.h src/sbox.c
 bin/Mixcolumns.o: src/Mixcolumns.c src/aes128.h src/mbox02.c src/mbox03.c
-out/test2sm : bin/subbytes.o bin/mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand1.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
+out/test2sm : bin/Msubbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 out/test2SM : bin/Subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand2.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
-out/test2sM : bin/subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand1.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
-out/test2Sm : bin/Subbytes.o bin/mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand2.o bin/cipher.o bin/addroundkey.o bin/shiftrows.o
+out/test2sM : bin/Msubbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2Sm : bin/Subbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
 out/testRoundkey : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
