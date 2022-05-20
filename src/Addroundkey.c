@@ -7,6 +7,8 @@ void AddRoundKey(unsigned char state[4 * Nb], unsigned long int w[Nb]) {
 			s.byte[j] = state[i * 4+j];
 		}
 		s.word ^= w[i];
-		state[i] = s.word;
+		for (int j = 0; j < 4;j++){
+			state[i * 4 + j] = s.byte[j];
+		}
 	}
 }
