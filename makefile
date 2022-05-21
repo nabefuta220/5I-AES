@@ -108,3 +108,5 @@ bin/mkibox.o: src/mkibox.c src/aes128.h
 out/mkibox : bin/Inverse.o bin/Multiply.o bin/mkibox.o
 src/ibox.c : out/mkibox
 	./$< > $@
+bin/Finverse.o: src/Finverse.c src/aes128.h src/ibox.c
+out/testFinverse : bin/testInverse.o bin/Finverse.o bin/Multiply.o
