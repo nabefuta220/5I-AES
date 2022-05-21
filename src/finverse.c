@@ -18,17 +18,17 @@
  * @param n
  * @return unsigned char a^n(mod x^8 + x^4 + x^3 + x + 1)
  */
-unsigned char pow(unsigned char a, int n);
+unsigned char modpow(unsigned char a, int n);
 
-unsigned char Inverse(unsigned char b) { return pow(b, 254); }
+unsigned char Inverse(unsigned char b) { return modpow(b, 254); }
 
-unsigned char pow(unsigned char a, int n) {
+unsigned char modpow(unsigned char a, int n) {
 	unsigned char res = 1;
 
 	if (n == 0) {
 		return res;
 	}
-	res = pow(a, n / 2);
+	res = modpow(a, n / 2);
 	res = Multiply(res, res);
 	if (n & 1) {
 		res = Multiply(res, a);
