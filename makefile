@@ -68,15 +68,6 @@ bin/mkmbox02.o: src/mkmbox02.c
 bin/mkmbox03.o: src/mkmbox03.c
 bin/Subbytes.o: src/Subbytes.c src/aes128.h src/sbox.c
 bin/Mixcolumns.o: src/Mixcolumns.c src/aes128.h src/mbox02.c src/mbox03.c
-out/test2sm : bin/Msubbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
-out/test2SM : bin/Subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
-
-out/test2sM : bin/Msubbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
-out/test2Sm : bin/Subbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
-bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
 out/testRoundkey : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/cipherH.o \
 bin/debug.o bin/keyexpand1.o bin/shiftrows.o bin/mixcolumns.o bin/subbytes.o \
@@ -113,3 +104,35 @@ out/testFinverse : bin/testInverse.o bin/Finverse.o bin/Multiply.o
 bin/finverse.o: src/finverse.c src/aes128.h
 out/testfinverse : bin/testInverse.o bin/finverse.o bin/Multiply.o
 
+out/test2sm : bin/Msubbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2SM : bin/Subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+out/test2sM : bin/Msubbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2Sm : bin/Subbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+out/test2fsm : bin/Msubbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2fSM : bin/Subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+out/test2fsM : bin/Msubbytes.o bin/Mixcolumns.o bin/Multiply.o bin/finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2fSm : bin/Subbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+out/test2Fsm : bin/Msubbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2FSM : bin/Subbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+out/test2FsM : bin/Msubbytes.o bin/Mixcolumns.o bin/Multiply.o bin/Finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand1.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+out/test2FSm : bin/Subbytes.o bin/Mmixcolumns.o bin/Multiply.o bin/Finverse.o bin/Affine.o bin/test2.o \
+bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
+
+clock : out/$(TARGET)
+	(time ./$< ) 2>&1 | cat > results/time_$(TARGET).txt
