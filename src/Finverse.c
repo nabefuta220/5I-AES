@@ -20,8 +20,5 @@ unsigned char Inverse(unsigned char b) {
 			res ^= ibox[i];
 		}
 	}
-    if(res & (1<<7)){
-		res ^= (0b100011011);
-	}
 	return res;
 }
