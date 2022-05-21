@@ -103,3 +103,13 @@ out/Test1 : bin/Multiply.o bin/Inverse.o bin/Affine.o bin/test1.o bin/Cipher.o \
 bin/debug.o bin/keyexpand1.o bin/Shiftrows.o bin/Mmixcolumns.o bin/Msubbytes.o \
 bin/Addroundkey.o 
 bin/Cipher.o: src/Cipher.c src/aes128.h
+
+bin/mkibox.o: src/mkibox.c src/aes128.h
+out/mkibox : bin/Inverse.o bin/Multiply.o bin/mkibox.o
+src/ibox.c : out/mkibox
+	./$< > $@
+bin/Finverse.o: src/Finverse.c src/aes128.h src/ibox.c
+out/testFinverse : bin/testInverse.o bin/Finverse.o bin/Multiply.o
+bin/finverse.o: src/finverse.c src/aes128.h
+out/testfinverse : bin/testInverse.o bin/finverse.o bin/Multiply.o
+

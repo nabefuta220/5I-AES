@@ -26,3 +26,5 @@ jobs:
           make check TARGET=testShiftrows
           make check TARGET=testmixcolumns
           make check TARGET=Test1
+          make check TARGET=testFinverse
+          make check TARGET=testfinverse
