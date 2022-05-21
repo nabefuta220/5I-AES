@@ -1,3 +1,13 @@
+/**
+ * @file mksbox.c
+ * @author Watanabe Satoshi
+ * @brief subbyteの高速化用辞書を作成する
+ * @version 0.1
+ * @date 2022-05-21
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include <stdio.h>
 
 #include "aes128.h"

@@ -1,6 +1,13 @@
 #include <stdio.h>
 
 #include "aes128.h"
+/**
+ * @brief 平文をAES128で暗号化する
+ *
+ * @param in 平文
+ * @param out 暗号化した平文
+ * @param w 暗号鍵
+ */
 void Cipher(unsigned char in[4 * Nb], unsigned char out[4 * Nb],
             unsigned long int w[Nb * (Nr + 1)]) {
 	printf("PLAINTEXT:       ");

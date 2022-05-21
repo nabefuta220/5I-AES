@@ -1,5 +1,10 @@
 #include "aes128.h"
 
+/**
+ * @brief ブロックデータに行列計算をする
+ *
+ * @param state ブロックデータ
+ */
 void MixColumns(unsigned char state[4 * Nb]) {
 	unsigned char res[4 * Nb];
 	for (int i = 0; i < 4 * Nb; i += 4) {

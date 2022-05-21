@@ -1,3 +1,13 @@
+/**
+ * @file mkmbox02.c
+ * @author Watanabe Satoshi
+ * @brief mixcolumnsの高速化用辞書を作成する
+ * @version 0.1
+ * @date 2022-05-21
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include <stdio.h>
 
 #include "aes128.h"

@@ -6,8 +6,14 @@
  * @param a
  * @param bits ローテートする回数
  * @return aをbits分、右にローテートした結果
-**/
+ **/
 unsigned char rotate(unsigned char a, int bits);
+/**
+ * @brief バイトデータに対してアフィン変換を行う
+ *
+ * @param b バイトデータ
+ * @return unsigned char bにアフィン変換を行った結果
+ */
 unsigned char Affine(unsigned char b) {
 	unsigned char res = b;
 	res ^= rotate(b, 4);
