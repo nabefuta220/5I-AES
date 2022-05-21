@@ -13,12 +13,14 @@
 
 #include "aes128.h"
 int main() {
-	printf("unsigned char ibox[8]={");
-	for (unsigned char i = 1; i != 0; i <<= 1) {
+	printf("unsigned char ibox[255]={");
+	for (unsigned char i = 0;; i++) {
 		// printf("%x : %x\n", i, Inverse(i));
 		printf("0x%02x", Inverse(i));
-		if (i != 1 << 7) {
+		if (i != 0-1) {
 			printf(", ");
+		}else{
+			break;
 		}
 	}
 	printf("};\n");
