@@ -19,3 +19,10 @@ jobs:
           make check TARGET=testInverse
           make check TARGET=testAffine
           make check TARGET=test1
+          make check TARGET=testSubbytes 
+          make check TARGET=testMixcolumns
+          make check TARGET=testRoundkey
+          make check TARGET=testsubbytes
+          make check TARGET=testShiftrows
+          make check TARGET=testmixcolumns
+          make check TARGET=Test1
