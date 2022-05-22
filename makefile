@@ -136,3 +136,7 @@ bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
 clock : out/$(TARGET)
 	(time ./$< ) 2>&1 | cat > results/time_$(TARGET).txt
+
+bin/Invmixcolumns.o: src/Invmixcolumns.c src/aes128.h
+bin/testInvmixcolumns.o: src/testInvmixcolumns.c src/aes128.h
+out/testInvmixcolumns : bin/testInvmixcolumns.o bin/Invmixcolumns.o bin/Multiply.o bin/debug.o
