@@ -136,6 +136,7 @@ bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
 clock : out/$(TARGET)
 	(time ./$< ) 2>&1 | cat > results/time_$(TARGET).txt
+
 bin/Invsubbyte.o: src/Invsubbyte.c src/aes128.h
 bin/testInvsubbyte.o: src/testInvsubbyte.c src/aes128.h src/isbox.c
 out/testInvsubbyte : bin/testInvsubbyte.o bin/Invsubbyte.o bin/Affine.o bin/Inverse.o bin/Multiply.o
@@ -145,3 +146,13 @@ out/mkisbox : bin/mkisbox.o
 
 src/isbox.c : out/mkisbox
 	./$< > $@
+
+bin/Invmixcolumns.o: src/Invmixcolumns.c src/aes128.h
+bin/testInvmixcolumns.o: src/testInvmixcolumns.c src/aes128.h
+out/testInvmixcolumns : bin/testInvmixcolumns.o bin/Invmixcolumns.o bin/Multiply.o bin/debug.o
+
+bin/Invshiftrows.o: src/Invshiftrows.c src/aes128.h
+bin/testInvshiftrows.o: src/testInvshiftrows.c src/aes128.h
+out/testInvshiftrows : bin/Invshiftrows.o bin/testInvshiftrows.o bin/debug.o \
+
+
