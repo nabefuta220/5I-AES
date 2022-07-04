@@ -158,4 +158,6 @@ out/testInvshiftrows : bin/Invshiftrows.o bin/testInvshiftrows.o bin/debug.o \
 bin/InvCipher.o: src/InvCipher.c src/aes128.h
 
 bin/testInvCipher.o: src/testInvCipher.c src/aes128.h
-out/testInvCipher : bin/testInvCipher.o
+out/testInvCipher : bin/testInvCipher.o bin/InvCipher.o \
+bin/debug.o bin/Invshiftrows.o bin/Invsubbyte.o bin/Addroundkey.o \
+bin/Invmixcolumns.o bin/Multiply.o

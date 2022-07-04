@@ -31,4 +31,5 @@ jobs:
           make check TARGET=testInvsubbyte
           make check TARGET=testInvmixcolumns
           make check TARGET=testInvshiftrows 
+          make check TARGET=testInvCipher
 
