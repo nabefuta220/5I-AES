@@ -139,3 +139,9 @@ clock : out/$(TARGET)
 bin/Invsubbyte.o: src/Invsubbyte.c src/aes128.h
 bin/testInvsubbyte.o: src/testInvsubbyte.c src/aes128.h
 out/testInvsubbyte : bin/testInvsubbyte.o bin/Invsubbyte.o bin/Affine.o bin/Inverse.o bin/Multiply.o
+
+bin/mkisbox.o: src/mkisbox.c src/aes128.h src/sbox.c
+out/mkisbox : bin/mkisbox.o
+
+src/isbox.c : out/mkisbox
+	./$< > $@
