@@ -136,3 +136,8 @@ bin/keyexpand2.o bin/cipher.o bin/Addroundkey.o bin/Shiftrows.o
 
 clock : out/$(TARGET)
 	(time ./$< ) 2>&1 | cat > results/time_$(TARGET).txt
+
+bin/Invshiftrows.o: src/Invshiftrows.c src/aes128.h
+bin/testInvshiftrows.o: src/testInvshiftrows.c src/aes128.h
+out/testInvshiftrows : bin/Invshiftrows.o bin/testInvshiftrows.o bin/debug.o \
+
