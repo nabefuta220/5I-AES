@@ -160,4 +160,4 @@ bin/InvCipher.o: src/InvCipher.c src/aes128.h
 bin/testInvCipher.o: src/testInvCipher.c src/aes128.h
 out/testInvCipher : bin/testInvCipher.o bin/InvCipher.o \
 bin/debug.o bin/Invshiftrows.o bin/Invsubbyte.o bin/Addroundkey.o \
-bin/Invmixcolumns.o bin/Multiply.o
+bin/Invmixcolumns.o bin/Multiply.o bin/Cipher.o bin/shiftrows.o bin/Mmixcolumns.o bin/subbytes.o bin/Affine.o bin/Inverse.o
